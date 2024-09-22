@@ -1,5 +1,3 @@
-# daily_reminder.py  
-
 # Prompt the user for the task description  
 task = input("Enter your task: ")  
 
