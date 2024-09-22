@@ -11,7 +11,7 @@ time_bound = input("Is it time-bound? (yes/no): ").lower()
 
 # Function to provide the reminder
 def task_reminder(task, priority, time_bound):
-    reminder = f"'{task}' is a {priority} priority task"
+    reminder = f"Reminder: '{task}' is a {priority} priority task"
 
     # Match case statement for priority level
     match priority:
@@ -35,6 +35,6 @@ def task_reminder(task, priority, time_bound):
     
     return reminder
 
-# Print the customized reminder
+# Print the customized reminder with the word 'Reminder:'
 print(task_reminder(task, priority, time_bound))
 
