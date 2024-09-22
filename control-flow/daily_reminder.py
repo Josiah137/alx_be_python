@@ -1,33 +1,39 @@
-# daily_reminder.py
+# daily_reminder.py  
 
-# Prompt the user for the task description
-task = input("Enter your task: ")
+# Prompt the user for the task description  
+task = input("Enter your task: ")  
 
-# Prompt the user for the task's priority (high, medium, low)
-priority = input("Priority (high/medium/low): ").lower()
+# Validate priority input  
+while True:  
+    priority = input("Priority (high/medium/low): ").lower()  
+    if priority in ["high", "medium", "low"]:  
+        break  
+    print("Invalid input. Please enter 'high', 'medium', or 'low'.")  
 
-# Ask if the task is time-bound (yes/no)
-time_bound = input("Is it time-bound? (yes/no): ").lower()
+# Validate time-bound input  
+while True:  
+    time_bound = input("Is it time-bound? (yes/no): ").lower()  
+    if time_bound in ["yes", "no"]:  
+        break  
+    print("Invalid input. Please enter 'yes' or 'no'.")  
 
-# Use a Match Case statement for the task's priority
-match priority:
-    case "high":
-        reminder = f"Reminder: '{task}' is a high priority task"
-    case "medium":
-        reminder = f"Reminder: '{task}' is a medium priority task"
-    case "low":
-        reminder = f"Note: '{task}' is a low priority task."
-    case _:
-        reminder = "Invalid priority entered."
+# Initialize the reminder variable  
+reminder = ""  
 
-# Check if the task is time-bound
-if time_bound == "yes":
-    reminder += " that requires immediate attention today!"
-elif time_bound == "no":
-    reminder += " Consider completing it when you have free time."
-else:
-    reminder = "Invalid input for time sensitivity."
+# Use a Match Case statement for the task's priority  
+match priority:  
+    case "high":  
+        reminder = f"'{task}' is a high priority task"  
+    case "medium":  
+        reminder = f"'{task}' is a medium priority task"  
+    case "low":  
+        reminder = f"'{task}' is a low priority task."  
 
-# Print the final reminder
-print(reminder)
+# Check if the task is time-bound  
+if time_bound == "yes":  
+    reminder += " that requires immediate attention today!"  
+elif time_bound == "no":  
+    reminder += " Consider completing it when you have free time."  
 
+# Print the final reminder  
+print(f"Reminder: {reminder}")
